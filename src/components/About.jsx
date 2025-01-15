@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const AboutSection = styled.section`
   padding: 40px;
-  background-color: #fff;
   text-align: center;
 
   button {
@@ -56,7 +55,6 @@ const About = () => {
 <p>
 Sou Marciel um desenvolvedor de software apaixonado por tecnologia
       </p>
-      <button>Conheca meu trabalho</button>
     </AboutSection>
   );
 };
