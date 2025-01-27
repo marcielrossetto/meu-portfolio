@@ -7,7 +7,7 @@ const ContactSection = styled.section`
   text-align: center;
   background-color: #503939;
   width: 100%;
-  height: 20px;
+  height: 100px;
 `;
 
 const Contact = () => {

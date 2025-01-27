@@ -10,13 +10,15 @@ import Contact from "./components/Contact";
 // Definição do AppContainer
 const AppContainer = styled.div`
   position: relative;
-  z-index: -1; /* Certifica-se de que está acima da imagem de fundo */
   width: 100%;
   min-height: 100vh; /* Garante que ocupa toda a altura da janela */
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 15px; /* Ajuste de espaçamento nas laterais em telas pequenas */
+  box-sizing: border-box;
 `;
+
 
 function App() {
   return (
