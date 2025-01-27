@@ -102,12 +102,12 @@ const Header = () => {
     <HeaderContainer className={scrolled ? "scrolled" : ""}>
       <h1>Marciel Rossetto</h1>
       <LinksContainer>
-        <a href="/template1">Desenvolvedor Web Full'Stack</a> | 
-        <a href="/template2">React</a> | 
-        <a href="/template3">JavaScript</a> | 
-        <a href="/template4">PHP</a> | 
-        <a href="/template5">Banco de Dados</a> |
-        <a href="/template6">AWS</a>
+        <a href="/#template1">Desenvolvedor Web Full'Stack</a> | 
+        <a href="/#template2">React</a> | 
+        <a href="/#template3">JavaScript</a> | 
+        <a href="/#template4">PHP</a> | 
+        <a href="/#template5">Banco de Dados</a> |
+        <a href="/#template6">AWS</a>
       </LinksContainer>
     </HeaderContainer>
   );
