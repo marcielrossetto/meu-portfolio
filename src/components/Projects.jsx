@@ -47,7 +47,7 @@ const ProjectCard = styled.div`
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adicionando transição para o zoom e sombra */
 
   &:hover {
-    transform: scale(1); /* Efeito de zoom */
+    transform: scale(1.1); /* Efeito de zoom */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais forte no hover */
   }
 
