@@ -2,23 +2,24 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const VideoWrapper = styled.div`
-  position: ${(props) => (props.isBackground ? "absolute" : "fixed")};
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: ${(props) => (props.isBackground ? "100vh" : "100vh")};
-  z-index: ${(props) => (props.isBackground ? "-2" : "-1")};
+  height: 100vh;
+  z-index: ${(props) => (props.isVisible ? "-1" : "-2")};
   overflow: hidden;
-  transition: height 0.5s ease, position 0.5s ease;
+  opacity: ${(props) => (props.isVisible ? "1" : "0")};
+  transition: opacity 0.5s ease;
 
   video {
     position: absolute;
     top: 0;
+    left: 50%;
     transform: translateX(-50%);
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease-in-out;
   }
 `;
 
@@ -28,8 +29,8 @@ const AboutSection = styled.section`
   font-family: 'Arial', sans-serif;
   background-color: #f9f9f9;
   line-height: 1.6;
-  z-index: 10; /* Garante que fique acima do vídeo */
-  margin-top: 60vh; /* Adiciona espaçamento para que o conteúdo não fique atrás do vídeo */
+  z-index: 10;
+  margin-top: 100vh; /* Espaçamento inicial para que apareça após o vídeo */
 
   h2 {
     font-size: 1.2rem;
@@ -92,15 +93,17 @@ const AboutSection = styled.section`
 `;
 
 const About = () => {
-  const [scrollY, setScrollY] = useState(0);
-  const [isBackground, setIsBackground] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   const handleScroll = () => {
-    setScrollY(window.scrollY); // Captura a posição do scroll
-    if (window.scrollY > 600) {
-      setIsBackground(true); // Altera para fundo total ao rolar para baixo
+    const aboutSection = document.querySelector("section");
+    const headerHeight = 0; // Ajustar conforme necessário (se houver um header fixo)
+    const sectionTop = aboutSection.getBoundingClientRect().top;
+
+    if (sectionTop <= headerHeight) {
+      setIsVisible(false); // Remove o vídeo
     } else {
-      setIsBackground(false); // Volta para o modo fixo
+      setIsVisible(true); // Exibe o vídeo
     }
   };
 
@@ -111,13 +114,11 @@ const About = () => {
     };
   }, []);
 
-  const scale = Math.max(1 - scrollY / 800, 0.5); // Define o fator de escala com base na rolagem
-
   return (
     <>
-      <VideoWrapper isBackground={isBackground}>
-        <video autoPlay loop muted style={{ transform: `scale(${scale})` }}>
-          <source src="/assets/video2.mp4" type="video/mp4" />
+      <VideoWrapper isVisible={isVisible}>
+        <video autoPlay loop muted>
+          <source src="/assets/video3.mp4" type="video/mp4" />
         </video>
       </VideoWrapper>
       <AboutSection>
