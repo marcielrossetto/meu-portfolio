@@ -3,8 +3,11 @@ import styled from "styled-components";
 
 const ContactSection = styled.section`
   padding: 40px;
-  color: #503939;
+  color: #dbd9d9;
   text-align: center;
+  background-color: #503939;
+  width: 100%;
+  height: 20px;
 `;
 
 const Contact = () => {

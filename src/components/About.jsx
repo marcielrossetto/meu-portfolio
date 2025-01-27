@@ -3,57 +3,79 @@ import styled from "styled-components";
 
 const AboutSection = styled.section`
   padding: 40px;
-  text-align: center;
+  text-align: left;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  line-height: 1.6;
 
-  button {
-    background: linear-gradient(132deg, rgb(31, 207, 195) 0%, rgb(31, 145, 207) 100%);
-    border-radius: 8px;
-    width: 100%;
-    max-width: 250px;
-    height: 60px;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.8s ease, transform 0.2s ease;
-    margin-top: 20px;
+  h2 {
+    font-size: 1.2rem;
+    color: #5AB1A2;
+    font-style: italic;
+    margin-bottom: 20px;
   }
 
-  button:hover {
-    background: linear-gradient(132deg, rgb(224, 235, 213) 0%, rgb(37, 148, 141) 100%);
-    transform: scale(1.05);
+  p {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #34D5C5;
   }
 
-  button:active {
-    transform: scale(0.95);
+  p strong {
+    color: #34D5C5;
+    font-size: 2.8rem;
+    text-shadow: 1px 1px #eee;
+    font-weight: bold;
+  }
+
+  .highlight {
+    color: #f31616;
+    font-size: 1rem;
+    font-weight: 400;
+    text-shadow: none;
+    font-family: 'Playwrite India';
   }
 
   @media (max-width: 768px) {
-    padding: 20px;
-
-    button {
-      width: 90%;
-      max-width: none;
-    }
+  p {
+    font-size: 2rem;
   }
 
-  @media (max-width: 480px) {
-    button {
-      font-size: 14px;
-      height: 50px;
-    }
+  p strong {
+    font-size: 2.2rem;
+    color: #e98b20;
+    text-shadow: 1px 1px #eee;
+    font-weight: bold;
   }
+
+  .highlight {
+    color: #346e60;
+    font-size: 10px;
+    font-weight: 400;
+    text-shadow: none;
+  }
+}
+
+@media (max-width: 480px) {
+  p {
+    font-size: 1.5rem;
+  }
+
+  p strong {
+    font-size: 1.8rem;
+  }
+}
+
 `;
 
 const About = () => {
   return (
     <AboutSection>
-      <h2> Inovação em cada linha de código</h2>
+      <h2>👋 Olá, eu sou Marciel</h2>
       <p>
-      Inovação em cada linha de código</p>
-<p>Transformando Visões em Realidade Digital</p>
-<p>
-Sou Marciel um desenvolvedor de software apaixonado por tecnologia
+        Gosto de fazer '<strong>coisas divertidas</strong> e{" "}
+        <strong>interativas</strong> com código. <span className="highlight">Também falo e escrevo sobre essas coisas.</span>
       </p>
     </AboutSection>
   );
